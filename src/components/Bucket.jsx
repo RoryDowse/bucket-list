@@ -14,7 +14,7 @@ function Bucket(props) {
 
     // TODO: Write logic to call the editBucketItem prop with the supplied values
      // Call editBucketItem with the ID and updated values
-    props.editBucketItem(edit.id, { text: edit.value, eagerness: edit.eagerness });
+    props.editBucketItem(edit.id, value);
     // TODO: Set the key:value pairs in the `edit` object back to empty strings
     // Reset the edit state
     setEdit({
@@ -41,7 +41,7 @@ function Bucket(props) {
       <div 
       onClick={() => props.completeBucketItem(item.id)}>
           {/* TODO: Add the item text here */}
-          {item.value}
+          {item.text}
       </div>
       <div className="icons">
         {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
@@ -49,7 +49,7 @@ function Bucket(props) {
         className="edit-icon"
         onClick={() => setEdit({
                 id: item.id,
-                value: item.value,
+                value: item.text,
                 eagerness: item.eagerness,
               })}
         > 
