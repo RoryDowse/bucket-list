@@ -12,10 +12,8 @@ function Bucket(props) {
 
   const submitUpdate = (value) => {
 
-    // TODO: Write logic to call the editBucketItem prop with the supplied values
      // Call editBucketItem with the ID and updated values
     props.editBucketItem(edit.id, value);
-    // TODO: Set the key:value pairs in the `edit` object back to empty strings
     // Reset the edit state
     setEdit({
       id: null,
@@ -30,21 +28,15 @@ function Bucket(props) {
   }
 
   return props.bucket.map((item, index) => (
-    // TODO: Add a className of `bucket-row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
-    // TODO: Add a key attribute set to the value of the index position
-    // Hint: use a ternary operator
     <div 
       className={`bucket-row ${item.completed ? 'complete' : ''} ${item.eagerness}`} 
       key={index} // Fallback key (item.id is not part of the ask)
     >
-      {/* TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument */}
       <div 
       onClick={() => props.completeBucketItem(item.id)}>
-          {/* TODO: Add the item text here */}
           {item.text}
       </div>
       <div className="icons">
-        {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties */}
         <p 
         className="edit-icon"
         onClick={() => setEdit({
@@ -55,7 +47,6 @@ function Bucket(props) {
         > 
           ✏️
         </p>
-        {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p 
         className="delete-icon"
         onClick={() => props.removeBucketItem(item.id)}

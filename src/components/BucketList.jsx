@@ -8,7 +8,6 @@ function BucketList() {
   // Function to add a bucket list item
   const addBucketItem = (item) => {
 
-    // TODO: Write logic to add the new bucket item to the bucket state variable
     // Take the new bucket item and add it to the bucket state variable
     setBucket((prevBucket) => [...prevBucket, item]);
     console.log(`Item Added: `, item);
@@ -19,7 +18,6 @@ function BucketList() {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
     let updatedBucket = bucket.map((item) => {
       
-      // TODO: Write logic that marks an item as complete or incomplete when invoked
       // If the ID of the item id matches the ID of the item that was clicked, mark it as complete
       if (item.id === id) {
         return { ...item, completed: !item.completed }; 
@@ -33,11 +31,9 @@ function BucketList() {
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
-    // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
     // Filter method creates a new array with all elements that do not have the ID passed to this function
     let updatedBucket = bucket.filter((item) => item.id !== id);
 
-    // TODO: Update the bucket state variable
     setBucket(updatedBucket);
   };
 
